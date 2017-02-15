@@ -21,6 +21,7 @@ Array.prototype.shuffle = helpers.shuffle
 var Card = require('./components/Card')
 
 // END OF STUFF TO NOT MODIFY
+
 var App = React.createClass({
 
     deal: function () {
@@ -37,52 +38,52 @@ var App = React.createClass({
             card5: shuffledDeck[4]
         });
     },
-    initialState: function () {
-        this.state = {
-            card1: "face_down",
-            card2: "face_down",
-            card3: "face_down",
-            card4: "face_down",
-            card5: "face_down"
-        };
-    },
+
     render: function () {
-        if(this.state == null) {
-           this.initialState();
+        if (this.state == null) {
+            return (
+                <div>
+                    <h1>Welcome to the KIEI-924 Casino!</h1>
+                    <Card />
+                    <div className="col-sm-2">
+                        <h1><a onClick={this.deal} href="#" className="btn btn-success">Deal</a></h1>
+                    </div>
+
+                </div>
+            )
         } else {
-        }
-        return (
-            <div>
-                <h1>Welcome to the KIEI-924 Casino!</h1>
-                <div className="row">
-                    <div className="col-sm-2">
-                        <h1><img className="img-responsive"
-                                 src={"http://golearntocode.com/images/cards/" + this.state.card1 + ".png"}/></h1>
-                    </div>
-                    <div className="col-sm-2">
-                        <h1><img className="img-responsive"
-                                 src={"http://golearntocode.com/images/cards/" + this.state.card2 + ".png"}/></h1>
-                    </div>
-                    <div className="col-sm-2">
-                        <h1><img className="img-responsive"
-                                 src={"http://golearntocode.com/images/cards/" + this.state.card3 + ".png"}/></h1>
-                    </div>
-                    <div className="col-sm-2">
-                        <h1><img className="img-responsive"
-                                 src={"http://golearntocode.com/images/cards/" + this.state.card4 + ".png"}/></h1>
-                    </div>
-                    <div className="col-sm-2">
-                        <h1><img className="img-responsive"
-                                 src={"http://golearntocode.com/images/cards/" + this.state.card5 + ".png"}/></h1>
+            return (
+                <div>
+                    <h1>Welcome to the KIEI-924 Casino!</h1>
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <h1><img className="img-responsive"
+                                     src={"http://golearntocode.com/images/cards/" + this.state.card1 + ".png"}/></h1>
+                        </div>
+                        <div className="col-sm-2">
+                            <h1><img className="img-responsive"
+                                     src={"http://golearntocode.com/images/cards/" + this.state.card2 + ".png"}/></h1>
+                        </div>
+                        <div className="col-sm-2">
+                            <h1><img className="img-responsive"
+                                     src={"http://golearntocode.com/images/cards/" + this.state.card3 + ".png"}/></h1>
+                        </div>
+                        <div className="col-sm-2">
+                            <h1><img className="img-responsive"
+                                     src={"http://golearntocode.com/images/cards/" + this.state.card4 + ".png"}/></h1>
+                        </div>
+                        <div className="col-sm-2">
+                            <h1><img className="img-responsive"
+                                     src={"http://golearntocode.com/images/cards/" + this.state.card5 + ".png"}/></h1>
+                        </div>
                     </div>
                     <div className="col-sm-2">
                         <h1><a onClick={this.deal} href="#" className="btn btn-success">Deal</a></h1>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 })
-
 
 ReactDOM.render(<App />, document.getElementById("app"))
